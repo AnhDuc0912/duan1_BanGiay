@@ -4,8 +4,6 @@
  */
 package model;
 
-import java.util.Date;
-
 /**
  *
  * @author hoanh
@@ -13,15 +11,16 @@ import java.util.Date;
 public class HoaDon {
 
     private int MaHD;
-    private Date NgayTao;
+    private String NgayTao;
     private double TongTien;
     private boolean TrangThai;
     private int MaTTKH;
     private int MaNV;
+
     public HoaDon() {
     }
 
-    public HoaDon(int MaHD, Date NgayTao, double TongTien, boolean TrangThai, int MaTTKH, int MaNV) {
+    public HoaDon(int MaHD, String NgayTao, double TongTien, boolean TrangThai, int MaTTKH, int MaNV) {
         this.MaHD = MaHD;
         this.NgayTao = NgayTao;
         this.TongTien = TongTien;
@@ -38,11 +37,11 @@ public class HoaDon {
         this.MaHD = MaHD;
     }
 
-    public Date getNgayTao() {
+    public String getNgayTao() {
         return NgayTao;
     }
 
-    public void setNgayTao(Date NgayTao) {
+    public void setNgayTao(String NgayTao) {
         this.NgayTao = NgayTao;
     }
 
@@ -77,7 +76,5 @@ public class HoaDon {
     public void setMaNV(int MaNV) {
         this.MaNV = MaNV;
     }
-    
-    
-    
+
 }
