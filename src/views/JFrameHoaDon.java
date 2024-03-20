@@ -47,7 +47,7 @@ public class JFrameHoaDon extends javax.swing.JFrame {
                     hoaDon.getMaHD(),
                     hoaDon.getNgayTao(),
                     hoaDon.getTongTien(),
-                    hoaDon.isTrangThai(),
+                    hoaDon.getTrangThai(),
                     map.get(3),
                     map.get(2)
             };
@@ -67,7 +67,7 @@ public class JFrameHoaDon extends javax.swing.JFrame {
                 hoaDon.getMaHD(),
                 hoaDon.getNgayTao(),
                 hoaDon.getTongTien(),
-                hoaDon.isTrangThai(),
+                hoaDon.getTrangThai(),
                 hashMap.get(3),
                 hashMap.get(2)
         };

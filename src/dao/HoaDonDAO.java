@@ -29,7 +29,7 @@ public class HoaDonDAO {
                 int MaHD = rs.getInt("MaHD");
                 String NgayTao = rs.getString("NgayTao");
                 double TongTien = rs.getDouble("TongTien");
-                boolean TrangThai = rs.getBoolean("TrangThai");
+                String TrangThai = rs.getString("TrangThai");
 
                 int MaTTKH = rs.getInt("MaTTKH");
                 int MaNV = rs.getInt("MaNV");
@@ -66,7 +66,7 @@ public class HoaDonDAO {
                 int MaHD = rs.getInt("MaHD");
                 String NgayTao = rs.getString("NgayTao");
                 double TongTien = rs.getDouble("TongTien");
-                boolean TrangThai = rs.getBoolean("TrangThai");
+                String TrangThai = rs.getString("TrangThai");
 
                 int MaTTKH = rs.getInt("MaTTKH");
                 int MaNV = rs.getInt("MaNV");

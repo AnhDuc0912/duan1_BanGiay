@@ -13,14 +13,14 @@ public class HoaDon {
     private int MaHD;
     private String NgayTao;
     private double TongTien;
-    private boolean TrangThai;
+    private String TrangThai;
     private int MaTTKH;
     private int MaNV;
 
     public HoaDon() {
     }
 
-    public HoaDon(int MaHD, String NgayTao, double TongTien, boolean TrangThai, int MaTTKH, int MaNV) {
+    public HoaDon(int MaHD, String NgayTao, double TongTien, String TrangThai, int MaTTKH, int MaNV) {
         this.MaHD = MaHD;
         this.NgayTao = NgayTao;
         this.TongTien = TongTien;
@@ -53,14 +53,6 @@ public class HoaDon {
         this.TongTien = TongTien;
     }
 
-    public boolean isTrangThai() {
-        return TrangThai;
-    }
-
-    public void setTrangThai(boolean TrangThai) {
-        this.TrangThai = TrangThai;
-    }
-
     public int getMaTTKH() {
         return MaTTKH;
     }
@@ -75,6 +67,14 @@ public class HoaDon {
 
     public void setMaNV(int MaNV) {
         this.MaNV = MaNV;
+    }
+
+    public String getTrangThai() {
+        return TrangThai;
+    }
+
+    public void setTrangThai(String trangThai) {
+        TrangThai = trangThai;
     }
 
 }
