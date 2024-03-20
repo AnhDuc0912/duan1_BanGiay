@@ -130,6 +130,7 @@ public class JFrameVoucher extends javax.swing.JFrame implements MouseListener {
                     voucher.isDonVi() == true ? "%" : "VND",
                     voucher.isTrangThai() == true ? "Hoạt động" : "Không hoạt động"
             };
+            this.modelTable.removeRow(row);
             this.modelTable.insertRow(row, rowData);
             clear();
         }
