@@ -163,6 +163,7 @@ public class JFrameVoucher extends javax.swing.JFrame implements MouseListener {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jpnNavigation = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         btnVoucher = new javax.swing.JButton();
@@ -323,6 +324,9 @@ public class JFrameVoucher extends javax.swing.JFrame implements MouseListener {
 
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("%");
+
+        buttonGroup2.add(jRadioButton3);
+        buttonGroup2.add(jRadioButton4);
 
         jRadioButton3.setText("Hoạt động");
 
@@ -686,6 +690,7 @@ public class JFrameVoucher extends javax.swing.JFrame implements MouseListener {
     private javax.swing.JButton btnHome;
     private javax.swing.JButton btnVoucher;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -736,10 +741,19 @@ public class JFrameVoucher extends javax.swing.JFrame implements MouseListener {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        this.jRadioButton2.setSelected(this.jTable1.getValueAt(row,
-                6).toString().equals("%") ? true : false);
-        this.jRadioButton3.setSelected(this.jTable1.getValueAt(row,
-                7).toString().equals("Hoạt động") ? true : false);
+        if (this.jTable1.getValueAt(row,
+                7).toString().equals("Hoạt động")) {
+            this.jRadioButton3.setSelected(true);
+        } else {
+            this.jRadioButton4.setSelected(true);
+        }
+
+        if (this.jTable1.getValueAt(row,
+                6).toString().equals("%")) {
+            this.jRadioButton2.setSelected(true);
+        } else {
+            this.jRadioButton1.setSelected(true);
+        }
 
     }
 
