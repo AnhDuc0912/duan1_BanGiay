@@ -15,8 +15,7 @@ import model.HoaDonChiTiet;
 public class HoaDonChiTietDAO {
     public List<Map<Integer, Object>> layThongTinHoaDonChiTiet() {
         List<Map<Integer, Object>> list = new ArrayList<>();
-        Map<Integer, Object> map = new HashMap<>();
-
+    
         try {
             ConnectDB.getInstance().connect();
             Connection con = ConnectDB.getCon();
@@ -33,22 +32,23 @@ public class HoaDonChiTietDAO {
                 double DonGia = rs.getDouble("DonGia");
                 int MaKM = rs.getInt("MaKM");
                 String GhiChu = rs.getString("GhiChu");
-
+    
                 String tenSP = rs.getString("TenSP");
-
-                HoaDonChiTiet HoaDonChiTiet = new HoaDonChiTiet(MaHDCT, MaCTSP, MaHD, MaTT, SoLuong, DonGia, MaKM,
-                        GhiChu);
-                map.put(1, HoaDonChiTiet);
+    
+                Map<Integer, Object> map = new HashMap<>();
+                HoaDonChiTiet hoaDonChiTiet = new HoaDonChiTiet(MaHDCT, MaCTSP, MaHD, MaTT, SoLuong, DonGia, MaKM, GhiChu);
+                map.put(1, hoaDonChiTiet);
                 map.put(2, tenSP);
-
+    
                 list.add(map);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+    
         return list;
     }
+    
 
     public Map<Integer, Object> timKiemHoaDonBangMa(int maHD) {
         Map<Integer, Object> map = new HashMap<>();

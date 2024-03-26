@@ -16,39 +16,46 @@ import model.HoaDon;
 public class HoaDonDAO {
     public List<HashMap<Integer, Object>> layThongTinHoaDon() {
         List<HashMap<Integer, Object>> list = new ArrayList<>();
-        HashMap<Integer, Object> hashMap = new HashMap<>();
-        HoaDon HoaDon = null;
         try {
             ConnectDB.getInstance().connect();
             Connection con = ConnectDB.getCon();
-            String sql = "SELECT *  FROM HOA_DON hd JOIN NHAN_VIEN nv ON hd.MaNV = nv.MaNV JOIN THONG_TIN_KH ttk ON hd.MaTTKH = ttk.MaTTKH";
+            String sql = "SELECT * FROM HOA_DON hd JOIN NHAN_VIEN nv ON hd.MaNV = nv.MaNV JOIN THONG_TIN_KH ttk ON hd.MaTTKH = ttk.MaTTKH";
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery(sql);
-
+    
             while (rs.next()) {
+                HashMap<Integer, Object> hashMap = new HashMap<>();
+                HoaDon hoaDon = new HoaDon();
+    
                 int MaHD = rs.getInt("MaHD");
                 String NgayTao = rs.getString("NgayTao");
                 double TongTien = rs.getDouble("TongTien");
                 String TrangThai = rs.getString("TrangThai");
-
                 int MaTTKH = rs.getInt("MaTTKH");
                 int MaNV = rs.getInt("MaNV");
                 String hoTenNhanVien = rs.getString("HoTen");
                 String tenKH = rs.getString("TenKH");
-
-                HoaDon = new HoaDon(MaHD, NgayTao, TongTien, TrangThai, MaTTKH, MaNV);
-                hashMap.put(1, HoaDon);
+    
+                hoaDon.setMaHD(MaHD);
+                hoaDon.setNgayTao(NgayTao);
+                hoaDon.setTongTien(TongTien);
+                hoaDon.setTrangThai(TrangThai);
+                hoaDon.setMaTTKH(MaTTKH);
+                hoaDon.setMaNV(MaNV);
+    
+                hashMap.put(1, hoaDon);
                 hashMap.put(2, hoTenNhanVien);
                 hashMap.put(3, tenKH);
-
+    
                 list.add(hashMap);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+    
         return list;
     }
+    
 
     public HashMap<Integer, Object> timKiemHoaDonBangMa(int maHD) {
         HashMap<Integer, Object> hashMap = new HashMap<>();
